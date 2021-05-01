@@ -2,6 +2,7 @@ import express, {Application} from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
+import loginRoutes from './routes/loginRoutes';
 
 class Server{
     public app: Application ; 
@@ -20,6 +21,7 @@ class Server{
 
     routes(): void{
         this.app.use('/',indexRoutes);
+        this.app.use('/login', loginRoutes);
     }
 
     start():void{
