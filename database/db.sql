@@ -76,7 +76,8 @@ CREATE TABLE `usuario` (
   `Correo` varchar(45) NOT NULL,
   `Contrasenia` varchar(45) NOT NULL,
   `Biografia` varchar(45) NOT NULL,
-  `Fecha` date NOT NULL
+  `Fecha` date NOT NULL,
+  `Tipo` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

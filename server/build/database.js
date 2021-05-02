@@ -17,7 +17,7 @@ function connect() {
             host: 'localhost',
             user: 'root',
             password: '1234',
-            database: 'prueba_db'
+            database: 'db'
         });
         return connection;
     });

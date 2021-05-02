@@ -15,7 +15,7 @@ function getLogin(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const conn = yield database_1.connect();
         const usuarios = yield conn.query('SELECT * FROM usuario');
-        return res.json(usuarios[0]);
+        return res.json(usuarios[2]);
     });
 }
 exports.getLogin = getLogin;
