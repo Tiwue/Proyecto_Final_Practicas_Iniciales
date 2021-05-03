@@ -5,6 +5,6 @@ exports.default = {
         host: 'localhost',
         user: 'root',
         password: '1234',
-        database: 'db' //verificar nombre de la base de datos
+        database: 'prueba_db' //verificar nombre de la base de datos
     }
 };

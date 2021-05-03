@@ -15,17 +15,21 @@ function getLogin(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const conn = yield database_1.connect();
         const usuarios = yield conn.query('SELECT * FROM usuario');
-        return res.json(usuarios[2]);
+        return res.json(usuarios[1]);
     });
 }
 exports.getLogin = getLogin;
 ;
 function validarCredenciales(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        const newSolicitud = req.body;
-        return res.json({
-            message: 'Validando Credenciales'
-        });
+        const datos = req.body;
+        console.log(datos.contrasenia);
+        console.log(datos.usuario);
+        const conn = yield database_1.connect();
+        const consulta = yield conn.query('SELECT * FROM usuario WHERE username= ?', [datos.usuario]);
+        console.log(consulta);
+        console.log([datos.contrasenia]);
+        console.log(consulta[0].Contrasenia);
     });
 }
 exports.validarCredenciales = validarCredenciales;
