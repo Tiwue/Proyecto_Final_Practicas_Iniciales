@@ -11,7 +11,8 @@ import { LoginComponent } from './components/login/login.component';
 import { IndexComponent } from './components/index/index.component';
 import { LoginService} from './services/login.service';
 import { RegistroComponent } from './components/registro/registro.component';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component'
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { PublicacionesComponent } from './components/publicaciones/publicaciones.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     LoginComponent,
     IndexComponent,
     RegistroComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    PublicacionesComponent
   ],
   imports: [
     BrowserModule,
