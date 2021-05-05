@@ -1,11 +1,12 @@
 
 export interface Registro{
-
-    usuario: String,
-    nombres: String,
-    apellidos: String,
-    fechaNac: String,
-    correo: String,
-    contrasenia: String,
-    biografia: String
+    Nombre: String,
+    Username: String,
+    Correo: String,
+    Contrasenia: String,
+    Biografia: String
+    Fecha: String,
+    Tipo: number
+    
+    
 };

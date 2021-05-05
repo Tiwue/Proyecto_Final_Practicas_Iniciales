@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {RegistroService} from '../../services/registro.service'; 
 import {Registro} from '../../models/registro';
+import {} from '../../models/respuesta';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -8,15 +10,22 @@ import {Registro} from '../../models/registro';
 })
 export class RegistroComponent implements OnInit {
   registro:Registro={
-    usuario: '',
-    nombres: '',
-    apellidos: '',
-    fechaNac: '',
-    correo: '',
-    contrasenia: '',
-    biografia: ''
+    
+    Nombre: '',
+    Username: '',
+    Correo: '',
+    Contrasenia: '',
+    Biografia: '',
+    Fecha: '',
+    Tipo: 0
+    
   };
-  constructor(private registroService:RegistroService) { 
+
+  resp:any={
+    acceso:false,
+    mensaje:""
+  };
+  constructor(private registroService:RegistroService,private router: Router, private activatedRoute: ActivatedRoute) { 
 
 
   }
@@ -26,7 +35,13 @@ export class RegistroComponent implements OnInit {
   registrarUsuario(){
     this.registroService.registrarUsuario(this.registro)
     .subscribe(
-      res=>{console.log(res)},
+      res=>{
+        console.log(res);
+        this.resp=res;
+        if(this.resp.mensaje =="Usuario registrado"){
+          this.router.navigate(['/'])
+        }
+      },
       err=> console.error(err)
     )
   }

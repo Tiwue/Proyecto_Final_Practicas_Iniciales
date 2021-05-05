@@ -36,29 +36,32 @@
           <legend class="text-center">Registrarse</legend>
               <div class="form-group">
               <a>Nombre de Usuario:</a>  
-              <input type="text" name="usuario" [(ngModel)]="registro.usuario"class="form-control"  placeholder="Ingrese usuario">
+              <input type="text" name="usuario" [(ngModel)]="registro.Username"class="form-control"  placeholder="Ingrese usuario">
               </div>
               <div class="form-group">
               <a>Nombres:</a>  
-              <input type="text" name="nombres" [(ngModel)]="registro.nombres"class="form-control"  placeholder="Ingrese sus nombres">
+              <input type="text" name="nombres" [(ngModel)]="registro.Nombre"class="form-control"  placeholder="Ingrese sus nombres">
               </div>
-              <div class="form-group">
-              <a>Apellidos:</a>  
-              <input type="text" name="apellidos" [(ngModel)]="registro.apellidos"class="form-control"  placeholder="Ingrese sus apellidos">
-              </div>
+              
+              <div class="form-group"> 
+                <a>Correo electronico:</a>   
+                <input type="email" name="correo" [(ngModel)]="registro.Correo"class="form-control"  placeholder="Ingrese su correo electronico">
+                </div>
               <div class="form-group">
               <a>Fecha de Nacimiento:</a>  
-              <input type="date" name="fechaNac" [(ngModel)]="registro.fechaNac"class="form-control"  placeholder="">
+              <input type="date" name="Fecha" [(ngModel)]="registro.Fecha"class="form-control"  placeholder="">
               </div>
               <div class="form-group"> 
               <a>Contraseña:</a>   
-              <input type="password" name="contrasenia" [(ngModel)]="registro.contrasenia"class="form-control"  placeholder="Ingrese su contraseña">
+              <input type="password" name="contrasenia" [(ngModel)]="registro.Contrasenia"class="form-control"  placeholder="Ingrese su contraseña">
               </div>
               <div class="form-group">
               <a>Biografia:</a>  
-              <input type="text" name="biografia" [(ngModel)]="registro.biografia"class="form-control"  placeholder="Ingrese una breve biografia">
+              <input type="text" name="biografia" [(ngModel)]="registro.Biografia"class="form-control"  placeholder="Ingrese una breve biografia">
               </div>
-              
+              <div class="alert alert-dismissible alert-warning text-center" *ngIf="resp.mensaje != ''">
+                {{resp.mensaje}}
+              </div>
               <button class="btn btn-outline-success btn-block text-center" (click)="registrarUsuario()">Crear Cuenta</button>
               
           </form>
