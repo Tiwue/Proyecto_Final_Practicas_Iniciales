@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import loginRoutes from './routes/loginRoutes';
-
+import registroRoutes from './routes/registroRoutes'
 class Server{
     public app: Application ; 
     constructor(){
@@ -17,11 +17,14 @@ class Server{
         this.app.use(cors());
         this.app.use(express.json());
         this.app.use(express.urlencoded({extended:false}))
+        
     }
 
     routes(): void{
         this.app.use('/',indexRoutes);
         this.app.use('/login', loginRoutes);
+        this.app.use('/registro', registroRoutes);
+
     }
 
     start():void{
@@ -31,4 +34,5 @@ class Server{
     }
 
 const server = new Server();
+
 server.start();

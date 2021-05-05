@@ -9,14 +9,18 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { GamesFormComponent } from './components/games-form/games-form.component';
 import { LoginComponent } from './components/login/login.component';
 import { IndexComponent } from './components/index/index.component';
-import { LoginService} from './services/login.service'
+import { LoginService} from './services/login.service';
+import { RegistroComponent } from './components/registro/registro.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component'
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     GamesFormComponent,
     LoginComponent,
-    IndexComponent
+    IndexComponent,
+    RegistroComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

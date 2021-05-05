@@ -1,6 +1,5 @@
 import {Router} from 'express';
 import {indexWelcome} from '../controllers/indexController';
-
 class IndexRoutes{
 public router: Router = Router();
 

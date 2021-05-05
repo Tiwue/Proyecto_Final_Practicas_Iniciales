@@ -12,11 +12,27 @@ export async function getLogin(req: Request,res:Response): Promise<any>{
 export async function validarCredenciales(req: Request,res:Response):Promise<any>{
 
     const datos = req.body;
-    console.log(datos.contrasenia);
-    console.log(datos.usuario);
     const conn = await connect();
+    
+    if (datos.usuario != '' && datos.contrasenia !=''){
     const consulta= await conn.query('SELECT * FROM usuario WHERE username= ?',[datos.usuario]);
-    console.log(consulta);
-    console.log([datos.contrasenia]);
-    console.log(consulta[0].Contrasenia);
+    try{
+    if (consulta[0].Contrasenia == datos.contrasenia){
+        
+         res.json({acceso: true, mensaje: "Bienvenido"})
+
+    }else{
+        console.log("credenciales no validas")
+         res.json({acceso: false, mensaje:"Credenciales no validas"})
+    }
+    }catch(error){
+        console.log("Usuario no registrado")
+         res.json({acceso: false, mensaje: "Usuario no registrado"})
+    }
+        }else{
+    console.log("Debe llenar todos los campos")
+           res.json({acceso:false, mensaje:"Debe llenar todos los campos"})
+}
+    
+    
 }; 
