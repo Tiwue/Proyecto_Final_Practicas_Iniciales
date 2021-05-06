@@ -7,11 +7,7 @@ export async function registrarUsuario(req: Request,res:Response):Promise<any>{
 
     const datos = req.body;
     const conn = await connect();
-    console.log(datos.Nombre);
-    console.log(datos.Username);
-    console.log(datos.Contrasenia);
-    console.log(datos.Correo);
-    console.log(datos.Fecha);
+    
     if (datos.Username != "" && datos.Contrasenia !="" && datos.Nombre != ""&& datos.Fecha != "" && datos.Correo != "" && datos.Biografia!= ""){
     const consulta= await conn.query('SELECT * FROM usuario WHERE username= ?',[datos.Username]);
     try{

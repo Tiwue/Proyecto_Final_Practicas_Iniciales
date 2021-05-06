@@ -15,11 +15,6 @@ function registrarUsuario(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const datos = req.body;
         const conn = yield database_1.connect();
-        console.log(datos.Nombre);
-        console.log(datos.Username);
-        console.log(datos.Contrasenia);
-        console.log(datos.Correo);
-        console.log(datos.Fecha);
         if (datos.Username != "" && datos.Contrasenia != "" && datos.Nombre != "" && datos.Fecha != "" && datos.Correo != "" && datos.Biografia != "") {
             const consulta = yield conn.query('SELECT * FROM usuario WHERE username= ?', [datos.Username]);
             try {

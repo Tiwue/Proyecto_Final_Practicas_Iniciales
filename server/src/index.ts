@@ -4,6 +4,8 @@ import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import loginRoutes from './routes/loginRoutes';
 import registroRoutes from './routes/registroRoutes'
+import forgPass from './routes/forgPass'
+import cambio from './routes/cambio'
 class Server{
     public app: Application ; 
     constructor(){
@@ -24,7 +26,8 @@ class Server{
         this.app.use('/',indexRoutes);
         this.app.use('/login', loginRoutes);
         this.app.use('/registro', registroRoutes);
-
+        this.app.use('/forgPass', forgPass )
+        this.app.use('/cambio', cambio)
     }
 
     start():void{

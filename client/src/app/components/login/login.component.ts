@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         console.log(res);
         this.resp=res;
         if(this.resp.mensaje =="Bienvenido"){
-          this.router.navigate(['/registro'])
+          this.router.navigate(['/publicaciones'])
         }
       },
       err=> console.error(err)
