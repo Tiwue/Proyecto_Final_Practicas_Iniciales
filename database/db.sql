@@ -81,6 +81,12 @@ CREATE TABLE `usuario` (
   `Tipo` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+CREATE TABLE `sesion` (
+  `idUsuario` int(11) NOT NULL,
+  `Username` varchar(45) NOT NULL,
+  `Tipo` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 -- Índices para tablas volcadas
 --
