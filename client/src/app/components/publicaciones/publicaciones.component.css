@@ -1,0 +1,23 @@
+.f1 {
+    font-family: 'Bungee', cursive;
+}
+.f2 {
+    font-family: 'DotGothic16', sans-serif;
+}
+.f3 {
+    font-family: 'Neucha', cursive;
+}
+.f4 {
+    font-family: 'Patrick Hand SC', cursive;
+}
+.f5 {
+    font-family: 'Press Start 2P', cursive;
+}
+.title-game {
+    font-size: 20px;
+    color: #00BC8C;
+}
+
+.description-game {
+    font-size: 18px;
+}

@@ -1,89 +1,134 @@
 <style>
-     body {
-      background-image: url(https://img4.goodfon.com/wallpaper/nbig/2/ce/igra-mega-man-x-mega-man-retro-igra-retro-pikseli-pxl-nebo-n.jpg);
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-      background-color: #050505;
-      color: white
-    }
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
+  body {
+    background-image: url(https://img4.goodfon.com/wallpaper/nbig/2/ce/igra-mega-man-x-mega-man-retro-igra-retro-pikseli-pxl-nebo-n.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #050505;
+    color: white
+  }
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
     }
-  </style>
+  }
+
+</style>
 
 <body>
-  
-<header>
+
+  <header>
     <nav class="navbar navbar-expand-lg navbar-success bg-dark">
-        <b class="navbar-brand text-success" href="#">Retro-Hub</b>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" routerLink="/registro" href="#">Perfil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Cerrar Sesión</a>
-            </li>
-          </ul>
+      <b class="navbar-brand text-success f2" href="#">Retro-Hub</b>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link f3" style="font-size: 18px;" routerLink="/registro" href="#">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link f3" style="font-size: 18px;" href="#">Cerrar Sesión</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light f1">Publicaciones</h1>
         </div>
-      </nav>
-</header>
+      </div>
+    </section>
+    <div class="album py-5" style="background-color: #303030">
 
-<main>
+        <section class="text-center container">
+            <div class="row py-lg-5">
+              <div class="col-lg-4 col-md-8 mx-auto">
+                <form class="form-block">
+                    <input class="form-control mr-sm-2 text-center" type="text" placeholder="Buscar">
+                    <br>
+                    <button class="btn btn-success my-2 my-sm-0" type="submit">- Buscar - </button>
+                  </form>
+                </div>
+            </div>
+          </section>
 
-<section class="py-5 text-center container">
-  <div class="row py-lg-5">
-    <div class="col-lg-6 col-md-8 mx-auto">
-      <h1 class="fw-light">Publicaciones</h1>
-    </div>
-  </div>
-</section>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-<div class="album py-5 bg-light">
-  <div class="container">
-
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <div class="col">
-        <div class="card shadow-sm">
-            <img src="https://image.winudf.com/v2/image/Y29tLmp0LnBhY2ttYW4ucGFjbWFuLnBvY21vbl9zY3JlZW5fMF8xNTE3NDgyODY3XzA3Mg/screen-0.jpg?fakeurl=1&type=.jpg" alt="">
-          <div class="card-body">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-primary">View</button>
-                <button type="button" class="btn btn-sm btn-secondary">Edit</button>
+          <div class="col">
+            <div class="card shadow-sm">
+              <a routerLink="/registro">
+                <img width="100%"
+                  src="https://image.winudf.com/v2/image/Y29tLmp0LnBhY2ttYW4ucGFjbWFuLnBvY21vbl9zY3JlZW5fMF8xNTE3NDgyODY3XzA3Mg/screen-0.jpg?fakeurl=1&type=.jpg"
+                  alt="">
+              </a>
+              <div class="card-body" style="background-color: #1e1e1f">
+                <p class="f1 title-game">Packman</p>
+                <p class="card-text f4 description-game">This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-primary">Ver</button>
+                    <button type="button" class="btn btn-sm btn-secondary"><b>+</b></button>
+                    <button type="button" class="btn btn-sm btn-secondary">Editar</button>
+                  </div>
+                  <small class="text-muted">25/05/2021</small>
+                </div>
               </div>
-              <small class="text-muted">9 mins</small>
+              <div class="card-footer text-muted text-center">
+                By: anonymous
+              </div>
             </div>
           </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <a routerLink="/registro">
+                <img width="100%"
+                  src="https://image.winudf.com/v2/image/Y29tLmp0LnBhY2ttYW4ucGFjbWFuLnBvY21vbl9zY3JlZW5fMF8xNTE3NDgyODY3XzA3Mg/screen-0.jpg?fakeurl=1&type=.jpg"
+                  alt="">
+              </a>
+              <div class="card-body" style="background-color: #1e1e1f">
+                <p class="f1 title-game">Packman</p>
+                <p class="card-text f4 description-game">This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-primary">Ver</button>
+                    <button type="button" class="btn btn-sm btn-secondary"><b>+</b></button>
+                    <button type="button" class="btn btn-sm btn-secondary">Editar</button>
+                  </div>
+                  <small class="text-muted">25/05/2021</small>
+                </div>
+              </div>
+              <div class="card-footer text-muted text-center">
+                By: anonymous
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-</main>
+  </main>
 
-<footer class="text-muted py-5">
-<div class="container">
-  <p class="float-end mb-1">
-    <a href="#">Back to top</a>
-  </p>
-  <p class="mb-1">PONER ALGO CHIDORI ACA!</p>
-  
-</div>
-</footer>
+  <footer class="text-muted py-5">
+    <div class="container">
+      <p class="mb-1 f2" style="font-size: 18px;"><b>NEVER SAY GAME OVER!</b></p>
+
+    </div>
+  </footer>
