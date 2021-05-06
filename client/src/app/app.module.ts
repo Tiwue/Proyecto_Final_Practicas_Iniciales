@@ -12,7 +12,8 @@ import { IndexComponent } from './components/index/index.component';
 import { LoginService} from './services/login.service';
 import { RegistroComponent } from './components/registro/registro.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { PublicacionesComponent } from './components/publicaciones/publicaciones.component'
+import { PublicacionesComponent } from './components/publicaciones/publicaciones.component';
+import { PublicacionesService } from './services/publicaciones.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,7 @@ import { PublicacionesComponent } from './components/publicaciones/publicaciones
     HttpClientModule,
     FormsModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, PublicacionesService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

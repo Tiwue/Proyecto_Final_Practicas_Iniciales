@@ -8,9 +8,10 @@ const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const loginRoutes_1 = __importDefault(require("./routes/loginRoutes"));
-const registroRoutes_1 = __importDefault(require("./routes/registroRoutes"));
-const forgPass_1 = __importDefault(require("./routes/forgPass"));
+const publicacionesRoutes_1 = __importDefault(require("./routes/publicacionesRoutes"));
 const cambio_1 = __importDefault(require("./routes/cambio"));
+const forgPass_1 = __importDefault(require("./routes/forgPass"));
+const registroRoutes_1 = __importDefault(require("./routes/registroRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -30,6 +31,7 @@ class Server {
         this.app.use('/registro', registroRoutes_1.default);
         this.app.use('/forgPass', forgPass_1.default);
         this.app.use('/cambio', cambio_1.default);
+        this.app.use('/posts', publicacionesRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

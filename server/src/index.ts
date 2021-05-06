@@ -3,9 +3,10 @@ import morgan from 'morgan';
 import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import loginRoutes from './routes/loginRoutes';
-import registroRoutes from './routes/registroRoutes'
-import forgPass from './routes/forgPass'
+import publicacionesRoutes from './routes/publicacionesRoutes';
 import cambio from './routes/cambio'
+import forgPass from './routes/forgPass'
+import registroRoutes from './routes/registroRoutes'
 class Server{
     public app: Application ; 
     constructor(){
@@ -26,8 +27,9 @@ class Server{
         this.app.use('/',indexRoutes);
         this.app.use('/login', loginRoutes);
         this.app.use('/registro', registroRoutes);
-        this.app.use('/forgPass', forgPass )
-        this.app.use('/cambio', cambio)
+        this.app.use('/forgPass', forgPass );
+        this.app.use('/cambio', cambio);
+        this.app.use('/posts',publicacionesRoutes)
     }
 
     start():void{
