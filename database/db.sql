@@ -42,10 +42,11 @@ CREATE TABLE `consola` (
 CREATE TABLE `juego` (
   `idJuego` int(11) NOT NULL,
   `Nombre` varchar(45) NOT NULL,
-  `Descripcion` varchar(45) NOT NULL,
+  `Descripcion` varchar(300) NOT NULL,
   `Cartucho` varchar(45) NOT NULL,
   `Fecha` date NOT NULL,
-  `Consola_idConsola` int(11) NOT NULL
+  `Consola_idConsola` int(11) NOT NULL,
+  `Imagen` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -59,7 +60,7 @@ CREATE TABLE `publicacion` (
   `Fecha` timestamp NOT NULL DEFAULT current_timestamp(),
   `Usuario_idUsuario` int(11) NOT NULL,
   `Juego_idJuego` int(11) NOT NULL,
-  `Comentario` varchar(100) NOT NULL
+  `Comentario` varchar(230) NOT NULL
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
