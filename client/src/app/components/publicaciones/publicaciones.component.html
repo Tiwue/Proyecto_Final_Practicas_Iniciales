@@ -68,54 +68,27 @@
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-          <div class="col">
+          <div class="col" *ngFor="let post of posts">
             <div class="card shadow-sm">
               <a routerLink="/registro">
                 <img width="100%"
-                  src="https://image.winudf.com/v2/image/Y29tLmp0LnBhY2ttYW4ucGFjbWFuLnBvY21vbl9zY3JlZW5fMF8xNTE3NDgyODY3XzA3Mg/screen-0.jpg?fakeurl=1&type=.jpg"
+                  src={{post.Imagen}}
                   alt="">
               </a>
-              <div class="card-body" style="background-color: #1e1e1f">
-                <p class="f1 title-game">Packman</p>
-                <p class="card-text f4 description-game">This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-primary">Ver</button>
-                    <button type="button" class="btn btn-sm btn-secondary"><b>+</b></button>
-                    <button type="button" class="btn btn-sm btn-secondary">Editar</button>
-                  </div>
-                  <small class="text-muted">25/05/2021</small>
+              <div class="card-body" style="background-color: #1e1e1f; height: 210px;">
+                <p class="f1 title-game">{{post.nombreJuego}}</p>
+                <p class="card-text f4 description-game">{{post.Comentario}}</p>
+                <div class="text-right">
+                  <small class="text-muted">{{post.Fecha | date: 'yyyy-MM-dd'}}</small>
                 </div>
               </div>
-              <div class="card-footer text-muted text-center">
-                By: anonymous
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card shadow-sm">
-              <a routerLink="/registro">
-                <img width="100%"
-                  src="https://image.winudf.com/v2/image/Y29tLmp0LnBhY2ttYW4ucGFjbWFuLnBvY21vbl9zY3JlZW5fMF8xNTE3NDgyODY3XzA3Mg/screen-0.jpg?fakeurl=1&type=.jpg"
-                  alt="">
-              </a>
-              <div class="card-body" style="background-color: #1e1e1f">
-                <p class="f1 title-game">Packman</p>
-                <p class="card-text f4 description-game">This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-primary">Ver</button>
-                    <button type="button" class="btn btn-sm btn-secondary"><b>+</b></button>
-                    <button type="button" class="btn btn-sm btn-secondary">Editar</button>
-                  </div>
-                  <small class="text-muted">25/05/2021</small>
-                </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-primary">Ver</button>
+                <button type="button" class="btn btn-sm btn-success"><b>+</b></button>
+                <button type="button" class="btn btn-sm btn-light">Editar</button>
               </div>
               <div class="card-footer text-muted text-center">
-                By: anonymous
+                By: {{post.Usuario}}
               </div>
             </div>
           </div>
