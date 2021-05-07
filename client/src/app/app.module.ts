@@ -14,6 +14,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { PublicacionesComponent } from './components/publicaciones/publicaciones.component';
 import { PublicacionesService } from './services/publicaciones.service';
+import { LogoutComponent } from './components/logout/logout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { PublicacionesService } from './services/publicaciones.service';
     IndexComponent,
     RegistroComponent,
     ForgotPasswordComponent,
-    PublicacionesComponent
+    PublicacionesComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

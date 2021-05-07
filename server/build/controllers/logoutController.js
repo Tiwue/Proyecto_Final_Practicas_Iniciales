@@ -9,14 +9,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getPosts = void 0;
+exports.cerrarSesion = void 0;
 const database_1 = require("../database");
-function getPosts(req, res) {
+function cerrarSesion(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const conn = yield database_1.connect();
-        const posts = yield conn.query('SELECT publicacion.Fecha, publicacion.Comentario, juego.Nombre AS nombreJuego, usuario.Nombre AS Usuario, juego.Cartucho FROM publicacion INNER JOIN juego ON publicacion.Juego_idJuego=juego.idJuego INNER JOIN usuario ON publicacion.Usuario_idUsuario=usuario.idUsuario');
-        return res.json(posts);
+        const usuarios = yield conn.query('DELETE from sesion');
+        console.log('sesion cerrada');
+        return res.json({ mensaje: 'sesion cerrada' });
     });
 }
-exports.getPosts = getPosts;
+exports.cerrarSesion = cerrarSesion;
 ;

@@ -43,7 +43,7 @@ CREATE TABLE `juego` (
   `idJuego` int(11) NOT NULL,
   `Nombre` varchar(45) NOT NULL,
   `Descripcion` varchar(500) NOT NULL,
-  `Cartucho` varchar(100) NOT NULL,
+  `Cartucho` varchar(500) NOT NULL,
   `Fecha` date NOT NULL,
   `Consola_idConsola` int(11) NOT NULL,
   `Imagen` text NOT NULL

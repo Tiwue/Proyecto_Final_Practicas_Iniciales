@@ -7,6 +7,7 @@ import publicacionesRoutes from './routes/publicacionesRoutes';
 import cambio from './routes/cambio'
 import forgPass from './routes/forgPass'
 import registroRoutes from './routes/registroRoutes'
+import logOut from './routes/logoutRoutes'
 class Server{
     public app: Application ; 
     constructor(){
@@ -29,12 +30,13 @@ class Server{
         this.app.use('/registro', registroRoutes);
         this.app.use('/forgPass', forgPass );
         this.app.use('/cambio', cambio);
-        this.app.use('/posts',publicacionesRoutes)
+        this.app.use('/posts',publicacionesRoutes);
+        this.app.use('/logout', logOut)
     }
 
     start():void{
         this.app.listen(this.app.get('port'),()=>{
-        console.log('Prueba de puerto', this.app.get('port'))});
+        console.log('Server activo en puerto: ', this.app.get('port'))});
     }
     }
 

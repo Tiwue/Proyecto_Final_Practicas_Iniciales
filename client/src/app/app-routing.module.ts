@@ -5,6 +5,7 @@ import {LoginComponent} from './components/login/login.component'
 import { RegistroComponent } from './components/registro/registro.component';
 import { PublicacionesComponent } from './components/publicaciones/publicaciones.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import {LogoutComponent} from './components/logout/logout.component';
 const routes: Routes = [{
   path:'',
   redirectTo: '/index',
@@ -27,6 +28,9 @@ const routes: Routes = [{
 },{
   path:'forgPass',
   component: ForgotPasswordComponent
+},{
+  path:'logout',
+  component: LogoutComponent
 }
 ];
 
