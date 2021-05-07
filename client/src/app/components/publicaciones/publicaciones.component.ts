@@ -7,6 +7,11 @@ import { PublicacionesService } from '../../services/publicaciones.service';
 })
 export class PublicacionesComponent implements OnInit {
   posts: any = [];
+  sesion: any={
+    idUsuario:0,
+    Username: "",
+    Tipo: 0
+  }
   constructor(private publicacionesService: PublicacionesService) { }
 
   ngOnInit(): void {
@@ -16,6 +21,12 @@ export class PublicacionesComponent implements OnInit {
       },
       err => console.error(err)
     )
-  }
 
-}
+    this.publicacionesService.getSesion().subscribe(
+      res => {
+        this.sesion = res;
+      },
+      err => console.error(err)
+
+    )
+}};

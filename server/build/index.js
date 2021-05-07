@@ -13,6 +13,7 @@ const cambio_1 = __importDefault(require("./routes/cambio"));
 const forgPass_1 = __importDefault(require("./routes/forgPass"));
 const registroRoutes_1 = __importDefault(require("./routes/registroRoutes"));
 const logoutRoutes_1 = __importDefault(require("./routes/logoutRoutes"));
+const getSesionRoute_1 = __importDefault(require("./routes/getSesionRoute"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -34,6 +35,7 @@ class Server {
         this.app.use('/cambio', cambio_1.default);
         this.app.use('/posts', publicacionesRoutes_1.default);
         this.app.use('/logout', logoutRoutes_1.default);
+        this.app.use('/getSesion', getSesionRoute_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

@@ -12,4 +12,8 @@ export class PublicacionesService {
   getPublicaciones(){
       return this.http.get(`${this.API_URI}/posts`);
   }
+  getSesion(){
+    return this.http.get(`${this.API_URI}/getSesion`);
+
+  }
 }

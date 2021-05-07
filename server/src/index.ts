@@ -8,6 +8,7 @@ import cambio from './routes/cambio'
 import forgPass from './routes/forgPass'
 import registroRoutes from './routes/registroRoutes'
 import logOut from './routes/logoutRoutes'
+import getSesion from './routes/getSesionRoute'
 class Server{
     public app: Application ; 
     constructor(){
@@ -31,7 +32,8 @@ class Server{
         this.app.use('/forgPass', forgPass );
         this.app.use('/cambio', cambio);
         this.app.use('/posts',publicacionesRoutes);
-        this.app.use('/logout', logOut)
+        this.app.use('/logout', logOut);
+        this.app.use('/getSesion', getSesion);
     }
 
     start():void{
