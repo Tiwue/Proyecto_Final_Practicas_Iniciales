@@ -1,0 +1,95 @@
+<style>
+    body {
+        background-image: url(https://img4.goodfon.com/wallpaper/nbig/2/ce/igra-mega-man-x-mega-man-retro-igra-retro-pikseli-pxl-nebo-n.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: #050505;
+        color: white
+    }
+
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+</style>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-success bg-dark">
+            <b class="navbar-brand text-success f2" href="#">Retro-Hub</b>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link f3" style="font-size: 18px;" href="#">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link f3" style="font-size: 18px;" routerLink="/logout">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light f1">Nueva Publicación</h1>
+                </div>
+            </div>
+        </section>
+        <div class="album py-5" style="background-color: #303030">
+
+            <div class="container">
+
+
+                <div class="col">
+                    
+                        <div class="card shadow-sm">
+                            <div class="form-group">
+                                
+                                <label for="exampleInputPassword1" class="form-label mt-4">Juego</label>
+                                <select class="browser-default custom-select" required aria-label="Seleccione un juego">
+                                    <option selected>Seleccione un juego</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="exampleTextarea" class="form-label mt-4">Comentario</label>
+                                <textarea class="form-control" maxlength="230" placeholder="Escriba un comentario" required rows="3"></textarea>
+                            </div>
+                            <br>
+                            <button class="btn btn-primary">Publicar</button>
+                        </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer class="text-muted py-5">
+        <div class="container">
+            <p class="mb-1 f2" style="font-size: 18px;"><b>NEVER SAY GAME OVER!</b></p>
+
+        </div>
+    </footer>

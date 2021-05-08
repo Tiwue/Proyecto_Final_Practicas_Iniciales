@@ -16,6 +16,7 @@ import { PublicacionesComponent } from './components/publicaciones/publicaciones
 import { PublicacionesService } from './services/publicaciones.service';
 import { LogoutComponent } from './components/logout/logout.component';
 import { AdmonComponent } from './components/admon/admon.component';
+import { CreatePostComponent } from './components/create-post/create-post.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { AdmonComponent } from './components/admon/admon.component';
     ForgotPasswordComponent,
     PublicacionesComponent,
     LogoutComponent,
-    AdmonComponent
+    AdmonComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,

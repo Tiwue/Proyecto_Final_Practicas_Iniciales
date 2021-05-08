@@ -7,6 +7,7 @@ import { PublicacionesComponent } from './components/publicaciones/publicaciones
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import {LogoutComponent} from './components/logout/logout.component';
 import {AdmonComponent} from './components/admon/admon.component';
+import {CreatePostComponent} from './components/create-post/create-post.component';
 const routes: Routes = [{
   path:'',
   redirectTo: '/index',
@@ -35,6 +36,9 @@ const routes: Routes = [{
 },{
   path:'admon',
   component: AdmonComponent
+},{
+  path:'newPost',
+  component: CreatePostComponent
 }
 ];
 
