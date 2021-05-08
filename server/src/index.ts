@@ -9,6 +9,8 @@ import forgPass from './routes/forgPass'
 import registroRoutes from './routes/registroRoutes'
 import logOut from './routes/logoutRoutes'
 import getSesion from './routes/getSesionRoute'
+import getUsers from './routes/getUsuariosRoute'
+import getGames from './routes/getGamesRoutes'
 class Server{
     public app: Application ; 
     constructor(){
@@ -34,6 +36,8 @@ class Server{
         this.app.use('/posts',publicacionesRoutes);
         this.app.use('/logout', logOut);
         this.app.use('/getSesion', getSesion);
+        this.app.use('/getUsers', getUsers);
+        this.app.use('/getGames', getGames)
     }
 
     start():void{

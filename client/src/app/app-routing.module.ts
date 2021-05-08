@@ -6,6 +6,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { PublicacionesComponent } from './components/publicaciones/publicaciones.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import {LogoutComponent} from './components/logout/logout.component';
+import {AdmonComponent} from './components/admon/admon.component';
 const routes: Routes = [{
   path:'',
   redirectTo: '/index',
@@ -31,6 +32,9 @@ const routes: Routes = [{
 },{
   path:'logout',
   component: LogoutComponent
+},{
+  path:'admon',
+  component: AdmonComponent
 }
 ];
 
