@@ -11,6 +11,7 @@ import logOut from './routes/logoutRoutes'
 import getSesion from './routes/getSesionRoute'
 import getUsers from './routes/getUsuariosRoute'
 import getGames from './routes/getGamesRoutes'
+import createNewPost from './routes/newPostRoutes'
 class Server{
     public app: Application ; 
     constructor(){
@@ -37,7 +38,8 @@ class Server{
         this.app.use('/logout', logOut);
         this.app.use('/getSesion', getSesion);
         this.app.use('/getUsers', getUsers);
-        this.app.use('/getGames', getGames)
+        this.app.use('/getGames', getGames);
+        this.app.use('/createNewPost', createNewPost)
     }
 
     start():void{
