@@ -8,6 +8,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import {LogoutComponent} from './components/logout/logout.component';
 import {AdmonComponent} from './components/admon/admon.component';
 import {CreatePostComponent} from './components/create-post/create-post.component';
+import {GameFormComponent} from './components/game-form/game-form.component'
 const routes: Routes = [{
   path:'',
   redirectTo: '/index',
@@ -39,6 +40,13 @@ const routes: Routes = [{
 },{
   path:'newPost',
   component: CreatePostComponent
+},{
+  path: 'games/add',
+  component: GameFormComponent
+},
+{
+  path: 'games/edit/:id',
+  component: GameFormComponent
 }
 ];
 

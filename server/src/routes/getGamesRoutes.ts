@@ -2,8 +2,12 @@ import {Router} from 'express';
 
 const router=Router();
 
-import {obtenerJuegos } from '../controllers/getJuegosController';
+import {obtenerJuegos} from '../controllers/getJuegosController';
 
 router.route('/')
-    .get(obtenerJuegos)
+    .get(obtenerJuegos);
+
+
     export default router;
+
+    

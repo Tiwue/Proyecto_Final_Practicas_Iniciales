@@ -16,6 +16,7 @@ const logoutRoutes_1 = __importDefault(require("./routes/logoutRoutes"));
 const getSesionRoute_1 = __importDefault(require("./routes/getSesionRoute"));
 const getUsuariosRoute_1 = __importDefault(require("./routes/getUsuariosRoute"));
 const getGamesRoutes_1 = __importDefault(require("./routes/getGamesRoutes"));
+const gamesRoutes_1 = __importDefault(require("./routes/gamesRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -40,6 +41,7 @@ class Server {
         this.app.use('/getSesion', getSesionRoute_1.default);
         this.app.use('/getUsers', getUsuariosRoute_1.default);
         this.app.use('/getGames', getGamesRoutes_1.default);
+        this.app.use('/games', gamesRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

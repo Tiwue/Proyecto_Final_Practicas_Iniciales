@@ -16,5 +16,7 @@ export class AdmonService {
   getGames(){
     return this.http.get(`${this.API_URI}/getGames`);
 }
+
+
  
 }
