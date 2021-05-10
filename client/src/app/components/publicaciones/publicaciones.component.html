@@ -63,9 +63,10 @@
         <div class="row py-lg-5">
           <div class="col-lg-4 col-md-8 mx-auto">
             <form class="form-block">
-              <input class="form-control mr-sm-2 text-center" type="text" placeholder="Buscar">
+              <input class="form-control mr-sm-2 text-center" name="Nombre" [(ngModel)]="nombrejuego.Nombre" type="text" placeholder="Buscar" >
               <br>
-              <button class="btn btn-success my-2 my-sm-0" type="submit">- Buscar - </button>
+              <button class="btn btn-success my-2 my-sm-0" (click)="buscar()">- Buscar - </button>
+              <button  class="btn btn-success my-2 my-sm-0" *ngIf="posts2[0]!=undefined" (click)="limpiar()">- Limpiar - </button>
             </form>
           </div>
         </div>
@@ -75,7 +76,10 @@
           <h4 class="f4">Crear Publicación</h4>
         </button>
       </div>
-      <div class="container">
+      
+
+      
+      <div class="container" *ngIf="posts2[0]==undefined">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
           <div class="col" *ngFor="let post of posts">
@@ -99,11 +103,63 @@
                 By: {{post.Usuario}}
               </div>
             </div>
+            
             <br><br>
           </div>
 
         </div>
       </div>
+
+
+
+
+      <div class="container" *ngIf=" posts2[0]!=undefined">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+          <div class="col" *ngFor="let post of posts2">
+            <div class="card shadow-sm">
+              <a routerLink="/registro">
+                <img width="100%" height="525px" src={{post.Cartucho}} alt="">
+              </a>
+              <div class="card-body" style="background-color: #1e1e1f; height: 210px;">
+                <p class="f1 title-game">{{post.nombreJuego}}</p>
+                <p class="card-text f4 description-game">{{post.Comentario}}</p>
+                <div class="text-right">
+                  <small class="text-muted">{{post.Fecha | date: 'yyyy-MM-dd'}}</small>
+                </div>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-primary">Ver</button>
+
+                <button type="button" class="btn btn-sm btn-light" *ngIf="sesion.Tipo==1">Editar</button>
+              </div>
+              <div class="card-footer text-muted text-center">
+                By: {{post.Usuario}}
+              </div>
+            </div>
+            
+            <br><br>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
     </div>
 
   </main>

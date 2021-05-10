@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getPosts = void 0;
+exports.getPublicacion = exports.getPosts = void 0;
 const database_1 = require("../database");
 function getPosts(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -19,4 +19,15 @@ function getPosts(req, res) {
     });
 }
 exports.getPosts = getPosts;
+;
+function getPublicacion(req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const conn = yield database_1.connect();
+        const datos = req.body;
+        console.log(datos.Nombre);
+        const posts = yield conn.query('SELECT publicacion.Fecha, publicacion.Comentario, juego.Nombre AS nombreJuego, usuario.Nombre AS Usuario, juego.Cartucho FROM publicacion INNER JOIN juego ON publicacion.Juego_idJuego=juego.idJuego INNER JOIN usuario ON publicacion.Usuario_idUsuario=usuario.idUsuario WHERE juego.Nombre=?', [datos.Nombre]);
+        return res.json(posts);
+    });
+}
+exports.getPublicacion = getPublicacion;
 ;
