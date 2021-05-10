@@ -9,26 +9,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.eliminar = exports.update = exports.create = exports.getOne = exports.obtenerJuegos = void 0;
+exports.eliminar = exports.update = exports.create = exports.getOne = exports.obtenerUsuarios = void 0;
 const database_1 = require("../database");
-function obtenerJuegos(req, res) {
+function obtenerUsuarios(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const conn = yield database_1.connect();
-        const juegos = yield conn.query('SELECT * from juego');
-        return res.json(juegos);
+        const usuarios = yield conn.query('SELECT * from usuario');
+        return res.json(usuarios);
     });
 }
-exports.obtenerJuegos = obtenerJuegos;
+exports.obtenerUsuarios = obtenerUsuarios;
 ;
 function getOne(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const conn = yield database_1.connect();
         const { id } = req.params;
-        const games = yield conn.query("SELECT idJuego,Nombre, descripcion, cartucho, DATE_FORMAT(fecha, '%y/%m/%d') AS Fecha, Consola_idConsola FROM juego WHERE idJuego = ?", [id]);
-        if (games.length > 0) {
-            return res.json(games[0]);
+        const usuarios = yield conn.query("SELECT idUsuario, Nombre, Username, Correo, Contrasenia, Biografia, DATE_FORMAT(fecha, '%y/%m/%d') AS Fecha, tipo FROM usuario WHERE idUsuario = ?", [id]);
+        if (usuarios.length > 0) {
+            return res.json(usuarios[0]);
         }
-        res.status(404).json({ text: "The game doesn't exits" });
+        res.status(404).json({ text: "The user doesn't exits" });
     });
 }
 exports.getOne = getOne;
@@ -36,8 +36,8 @@ exports.getOne = getOne;
 function create(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const conn = yield database_1.connect();
-        const result = yield conn.query('INSERT INTO juego set ?', [req.body]);
-        res.json({ message: 'Game Saved' });
+        const result = yield conn.query('INSERT INTO usuario set ?', [req.body]);
+        res.json({ message: 'User Saved' });
     });
 }
 exports.create = create;
@@ -46,9 +46,9 @@ function update(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const conn = yield database_1.connect();
         const { id } = req.params;
-        const oldGame = req.body;
-        yield conn.query('UPDATE juego set ? WHERE idJuego = ?', [req.body, id]);
-        res.json({ message: "The game was Updated" });
+        const oldUser = req.body;
+        yield conn.query('UPDATE usuario set ? WHERE idUsuario = ?', [req.body, id]);
+        res.json({ message: "The user was Updated" });
     });
 }
 exports.update = update;
@@ -57,8 +57,8 @@ function eliminar(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const conn = yield database_1.connect();
         const { id } = req.params;
-        yield conn.query('DELETE FROM juego WHERE idJuego = ?', [id]);
-        res.json({ message: "The game was deleted" });
+        yield conn.query('DELETE FROM usuario WHERE idUsuario = ?', [id]);
+        res.json({ message: "The user was deleted" });
     });
 }
 exports.eliminar = eliminar;

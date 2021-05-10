@@ -17,7 +17,7 @@ export class GameFormComponent implements OnInit {
     Nombre: "",
     descripcion: "",
     cartucho: "",
-    Fecha: new Date(),
+    Fecha: "",
     Consola_idConsola: 0
 
   };
@@ -45,7 +45,7 @@ export class GameFormComponent implements OnInit {
         )
     }
   }
-
+  
   saveNewGame() {
     this.gameService.saveGame(this.game)
       .subscribe(
@@ -58,8 +58,7 @@ export class GameFormComponent implements OnInit {
   }
 
   updateGame() {
-    
-    this.gameService.updateGame(this.game.id, this.game)
+    this.gameService.updateGame(this.game.idJuego, this.game)
       .subscribe(
         res => { 
           console.log(res);

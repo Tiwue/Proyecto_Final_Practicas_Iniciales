@@ -9,6 +9,11 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { PublicacionesComponent } from './components/publicaciones/publicaciones.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import {LogoutComponent} from './components/logout/logout.component';
+import { AdmonComponent } from './components/admon/admon.component';
+import { CreatePostComponent } from './components/create-post/create-post.component';
+import { GameFormComponent } from './components/game-form/game-form.component';
+import { UserFormComponent } from './components/user-form/user-form.component';
+
 const routes: Routes = [{
   path:'',
   redirectTo: '/index',
@@ -43,7 +48,23 @@ const routes: Routes = [{
 },{
   path:'juego1/buscar/:id',
   component: Juego1Component
+},{
+  path:'admon',
+  component: AdmonComponent
+},{
+  path:'newPost',
+  component: CreatePostComponent
+},{
+  path:'newPost',
+  component: GameFormComponent
+},{
+  path: 'games/edit/:id',
+  component: GameFormComponent
+},{
+  path: 'user/edit/:id',
+  component: UserFormComponent
 }
+
 ];
 
 @NgModule({

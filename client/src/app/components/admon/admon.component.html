@@ -113,7 +113,7 @@
             <th scope="col">{{user.Contrasenia}}</th>
             <th scope="col" *ngIf="user.tipo==1">Administrador</th>
             <th scope="col" *ngIf="user.tipo==0">Cliente</th>
-            <th><button class="btn btn-outline-warning"><i class="fas fa-pencil-alt"></i></button></th>
+            <th><button class="btn btn-outline-warning" [routerLink]="['/user/edit', user.idUsuario]"><i class="fas fa-pencil-alt"></i></button></th>
             <th><button  class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
           </tr>
         </thead>
@@ -140,7 +140,7 @@
             <th scope="col">{{game.Fecha | date: 'yyyy-MM-dd'}}</th>
             <th scope="col" >{{game.Consola_idConsola}}</th>
             <th><button  [routerLink]="['/games/edit', game.idJuego]" class="btn btn-outline-warning"><i class="fas fa-pencil-alt"></i></button></th>
-            <th><button  class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
+            <th><button  (click)="deleteGame(game.idJuego)" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
           </tr>
         </thead>
         </table>

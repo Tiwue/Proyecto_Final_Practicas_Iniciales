@@ -1,1 +1,87 @@
-<p>user-form works!</p>
+<style>
+    body {
+      background-image: url(https://img4.goodfon.com/wallpaper/nbig/2/ce/igra-mega-man-x-mega-man-retro-igra-retro-pikseli-pxl-nebo-n.jpg);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-color: #050505;
+      color: white
+    }
+    </style>
+  
+  <!-- Toolbar -->
+  <body style="padding-bottom: 10px;">
+    
+        <nav class="navbar navbar-expand-lg navbar-success bg-dark">
+          <b class="navbar-brand text-success f2" href="#">Retro-Hub</b>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="navbar-brand text-success f2" routerLink="/admon">Administracion</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link f3" style="font-size: 18px;" href="#">Perfil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link f3" style="font-size: 18px;" routerLink="/logout">Cerrar Sesión</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      
+      <div  class="text-center">
+        <img src="./assets/logo.png" class="rounded p-5 rounded-circle">
+        <legend class="p-2">Editar Juego</legend>
+      </div >
+
+      <div class="container">
+        <div class="row">
+            <div class="col-sm">
+
+            </div>
+          <div class=" container col-lg-6 bg-dark w-25 p-5 h-75" style="margin-bottom: 100px;">
+            <form action="">
+                  <div class="form-group">
+                  <a>Nombre</a>  
+                  <input type="text" name="nombre" [(ngModel)]="user.Nombre" class="form-control"  placeholder="Nombre">
+                  </div>
+                  <div class="form-group">
+                  <a>Usuario</a>  
+                  <input type="text" name="descripcion" [(ngModel)]="user.Username"class="form-control" rows="10" placeholder="Descripcion">
+                  </div>
+                  
+                  <div class="form-group"> 
+                    <a>Correo</a>   
+                    <input type="text" name="correo" [(ngModel)]="user.Correo"class="form-control"  placeholder="link del cartucho">
+                    </div>
+                    <div class="form-group"> 
+                        <a>Contrasenia</a>   
+                        <input type="text" name="contrasenia" [(ngModel)]="user.Contrasenia"class="form-control"  placeholder="link del cartucho">
+                        </div>  
+                        <div class="form-group"> 
+                            <a>Biografia</a>   
+                            <textarea type="text" name="biografia" [(ngModel)]="user.Biografia"class="form-control" rows="10" placeholder="link del cartucho"></textarea>
+                            </div>    
+                  <div class="form-group"> 
+                  <a>Fecha</a>   
+                  <input type="text" name="fecha" [(ngModel)]="user.Fecha" class="form-control"  placeholder="Fecha Publicacion">
+                  </div>
+                  <div class="form-group">
+                  <a>Tipo</a>  
+                  <input type="number" name="tipo" [(ngModel)]="user.tipo"class="form-control"  placeholder="Id de la consola">
+                  </div>
+                  <div class="alert alert-dismissible alert-warning text-center" *ngIf="resp.mensaje != ''">
+                    {{resp.mensaje}}
+                  </div>
+                  <button class="btn btn-outline-success btn-block text-center" (click)="edit ? updateUser() : saveNewUser()">Guardar</button>
+                  
+              </form>  
+          </div>
+
+          <div class="col-sm">
+
+          </div>
+          
+        </div>
+      </div>
+    </body>

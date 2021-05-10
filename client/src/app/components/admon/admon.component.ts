@@ -41,4 +41,25 @@ export class AdmonComponent implements OnInit {
     this.divUsuarios=false;
   }
 
+  getGames() {
+    this.admonService.getGames()
+      .subscribe(
+        res => {
+          this.games = res;
+        },
+        err => console.error(err)
+      );
+  }
+
+  deleteGame(id: string) {
+    this.admonService.deleteGame(id)
+      .subscribe(
+        res => {
+          console.log(res);
+          this.getGames();
+        },
+        err => console.error(err)
+      )
+  }
+
 }

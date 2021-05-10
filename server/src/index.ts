@@ -10,6 +10,12 @@ import forgPass from './routes/forgPass'
 import registroRoutes from './routes/registroRoutes'
 import logOut from './routes/logoutRoutes'
 import getSesion from './routes/getSesionRoute'
+import getUsers from './routes/getUsuariosRoute'
+import getGames from './routes/getGamesRoutes'
+import gamesRoutes from './routes/gamesRoutes'
+import createNewPost from './routes/newPostRoutes'
+import usersRoutes from './routes/usersRoutes'
+
 class Server{
     public app: Application ; 
     constructor(){
@@ -36,6 +42,12 @@ class Server{
         this.app.use('/logout', logOut);
         this.app.use('/getSesion', getSesion);
         this.app.use('/juegos', juegosRoutes);
+        this.app.use('/getUsers', getUsers);
+        this.app.use('/games',gamesRoutes);
+        this.app.use('/getGames', getGames);
+        this.app.use('/createNewPost', createNewPost);
+        this.app.use('/users', usersRoutes)
+
     }
 
     start():void{

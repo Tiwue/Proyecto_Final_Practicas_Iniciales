@@ -17,6 +17,8 @@ export class AdmonService {
     return this.http.get(`${this.API_URI}/getGames`);
 }
 
-
+deleteGame(id: string) {
+  return this.http.delete(`${this.API_URI}/games/${id}`);
+}
  
 }

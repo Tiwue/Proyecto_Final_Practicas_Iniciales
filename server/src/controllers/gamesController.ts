@@ -13,7 +13,7 @@ export async function obtenerJuegos(req: Request,res:Response): Promise<any>{
 export async function getOne(req: Request, res: Response): Promise<any> {
     const conn = await connect();
     const { id } = req.params;
-    const games = await conn.query('SELECT * FROM juego WHERE idJuego = ?', [id]);
+    const games = await conn.query("SELECT idJuego,Nombre, descripcion, cartucho, DATE_FORMAT(fecha, '%y/%m/%d') AS Fecha, Consola_idConsola FROM juego WHERE idJuego = ?", [id]);
     
     if (games.length > 0) {
         return res.json(games[0]);

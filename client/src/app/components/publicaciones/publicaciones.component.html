@@ -38,7 +38,10 @@
             <a class="nav-link f3" style="font-size: 18px;" routerLink="/logout">Cerrar Sesión</a>
           </li>
           <li class="nav-item">
-          <a class="navbar-brand text-success f2" *ngIf="sesion.Tipo==1">Administracion</a>
+          <a class="navbar-brand text-success f2" routerLink="/admon" *ngIf="sesion.Tipo==1">Administracion</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand text-success f2" routerLink="/juegos">Juegos</a>
         </li>
         </ul>
       </div>
@@ -67,7 +70,9 @@
                 </div>
             </div>
           </section>
-
+          <div class="p-4 text-center">
+            <button class="btn btn-info my-2 my-sm-0 " routerLink="/newPost"><h3>Crear Publicacion</h3> </button>
+          </div>
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
@@ -87,7 +92,7 @@
               </div>
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-primary">Ver</button>
-                <button type="button" class="btn btn-sm btn-success"><b>+</b></button>
+               
                 <button type="button" class="btn btn-sm btn-light" *ngIf="sesion.Tipo==1">Editar</button>
               </div>
               <div class="card-footer text-muted text-center">

@@ -18,6 +18,11 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { JuegosComponent } from './components/juegos/juegos.component';
 import { JuegosService } from './services/juegos.service';
 import { Juego1Component } from './components/juego1/juego1.component';
+import { AdmonComponent } from './components/admon/admon.component';
+import { CreatePostComponent } from './components/create-post/create-post.component';
+import { UserFormComponent } from './components/user-form/user-form.component';
+import { GameFormComponent } from './components/game-form/game-form.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +35,11 @@ import { Juego1Component } from './components/juego1/juego1.component';
     PublicacionesComponent,
     LogoutComponent,
     JuegosComponent,
-    Juego1Component
+    Juego1Component,
+    AdmonComponent,
+    CreatePostComponent,
+    UserFormComponent,
+    GameFormComponent
   ],
   imports: [
     BrowserModule,
