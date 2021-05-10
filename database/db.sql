@@ -277,7 +277,17 @@ INSERT INTO `juego` (`Nombre`,`Descripcion`,`Cartucho`,`Fecha`,`Consola_idConsol
 
 INSERT INTO `juego` (`Nombre`,`Descripcion`,`Cartucho`,`Fecha`,`Consola_idConsola` ) VALUES 
 ('Adventures of Lolo','El malvado Devil King amenaza con destruir Eden, así que la princesa Lala y el príncipe Lolo salen al rescate. Desgraciadamente, la princesa es raptada y Lolo tiene que seguir en solitario. Usa tu inteligencia para ayudarle a superar las trampas del castillo de Devil King y rescatar a Lala.', 'https://media.redadn.es/imagenes/adventures-of-lolo_146656_caratula-1.jpg' ,'1991/02/21',2 );  
+
+INSERT INTO `publicacion` (`idPublicacion`, `Fecha`, `Usuario_idUsuario`, `Juego_idJuego`, `Comentario`) VALUES (NULL, current_timestamp(), '1', '19', 'Juego favorito de nuestro querido auxiliar de practicas iniciales');
+
+INSERT INTO `usuario` (`idUsuario`, `Nombre`, `Username`, `Correo`, `Contrasenia`,`Biografia`,`Fecha`,`Tipo`) VALUES (NULL,'admin','admin', 'asfasdfsadf', 'admin','asdf','2020/05/10','1');
+
+INSERT INTO `usuario` (`idUsuario`, `Nombre`, `Username`, `Correo`, `Contrasenia`,`Biografia`,`Fecha`,`Tipo`) VALUES (NULL,'admin2','admin2', 'asfasdfsadf', 'admin2','asdf','2020/05/10','0');
+
 COMMIT;
+
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

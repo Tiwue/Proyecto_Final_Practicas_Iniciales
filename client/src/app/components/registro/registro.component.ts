@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RegistroService} from '../../services/registro.service'; 
 import {Registro} from '../../models/registro';
-import {Respuesta} from '../../models/respuesta';
+import {} from '../../models/respuesta';
 import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-registro',

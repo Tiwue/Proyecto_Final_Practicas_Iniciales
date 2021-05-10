@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import{ IndexComponent} from './components/index/index.component'
 import {LoginComponent} from './components/login/login.component'
+import {JuegosComponent} from './components/juegos/juegos.component'
+import{Juego1Component} from './components/juego1/juego1.component'
+import{Juego2Component} from './components/juego1/juego2.component'
 import { RegistroComponent } from './components/registro/registro.component';
 import { PublicacionesComponent } from './components/publicaciones/publicaciones.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import {LogoutComponent} from './components/logout/logout.component';
-import {AdmonComponent} from './components/admon/admon.component';
-import {CreatePostComponent} from './components/create-post/create-post.component';
-import {GameFormComponent} from './components/game-form/game-form.component'
 const routes: Routes = [{
   path:'',
   redirectTo: '/index',
@@ -35,18 +35,14 @@ const routes: Routes = [{
   path:'logout',
   component: LogoutComponent
 },{
-  path:'admon',
-  component: AdmonComponent
+  path:'juegos',
+  component: JuegosComponent
 },{
-  path:'newPost',
-  component: CreatePostComponent
+  path:'juego1/buscar2/:id',
+  component: Juego2Component
 },{
-  path: 'games/add',
-  component: GameFormComponent
-},
-{
-  path: 'games/edit/:id',
-  component: GameFormComponent
+  path:'juego1/buscar/:id',
+  component: Juego1Component
 }
 ];
 

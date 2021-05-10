@@ -1,0 +1,187 @@
+<style>
+    body {
+      background-image: url(https://img4.goodfon.com/wallpaper/nbig/2/ce/igra-mega-man-x-mega-man-retro-igra-retro-pikseli-pxl-nebo-n.jpg);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-color: #050505;
+      color: white
+    }
+    
+    .cortar{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        overflow: hidden;
+    }
+  
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+      
+  
+  
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  
+  </style>
+  
+  <body>
+  
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-success bg-dark">
+        <b class="navbar-brand text-success f2" href="#">Retro-Hub</b>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link f3" style="font-size: 18px;" routerLink="/registro" href="#">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link f3" style="font-size: 18px;" routerLink="/logout">Cerrar Sesión</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </header>
+  
+    <main>
+  
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light f1">Juegos</h1>
+            <form class="form-block">
+                <input class="form-control mr-sm-2 text-center" name="Nombre" [(ngModel)]="nombrejuego.Nombre" type="text" placeholder="Buscar" >
+                <br>
+                <button class="btn btn-success my-2 my-sm-0" (click)="buscar()">- Buscar - </button>
+                <button  class="btn btn-success my-2 my-sm-0" *ngIf=" vjuegos2[0]!=undefined" (click)="limpiar()">- Limpiar - </button>
+               
+              </form>
+          </div>
+        </div>
+      </section>
+       
+            <div class="container" *ngIf="vjuegos2[0]==undefined" >
+                <br>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                 <br>
+                 <br>
+                  <div class="col" *ngFor="let juego of vjuegos">
+                    <div class="card shadow-sm">
+                     
+                        <img width="100%" height="525px"
+                          src={{juego.Cartucho}}
+                          alt="">
+                     
+                      <div class="card-body" style="background-color: #1e1e1f;  height: 50px;">
+                        <p class="f1 title-game">{{juego.Nombre}}</p>
+                      </div>
+                      <div class="container"style="background-color: #1e1e1f;  height: 70px;">
+                      <p class="cortar" >{{juego.Descripcion}}</p>
+                    </div>
+
+
+                    <div class="card-body" style="background-color: #1e1e1f; height: 85px;">
+                        <div class="text-right">
+                            <small class="text-muted">{{juego.Fecha | date: 'yyyy-MM-dd'}}</small>
+                            <br>
+                            <div class="btn-group">
+                                <button [routerLink]="['/juego1/buscar',juego.idJuego]" type="button" class="btn btn-sm btn-primary" >Ver Juego</button>
+                                
+                              </div>
+                          </div>
+                        </div>
+                    
+                    
+
+                    </div>
+                    <br>
+                    
+                </div>
+            </div>
+        </div>
+
+        
+  
+
+                 
+
+               
+
+
+        <div class="container" *ngIf=" vjuegos2[0]!=undefined">
+            <br>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+             <br>
+             <br>
+              <div class="col" *ngFor="let juego of vjuegos2">
+                <div class="card shadow-sm">
+                 
+                    <img width="100%" height="525px"
+                      src={{juego.Cartucho}}
+                      alt="">
+                 
+                  <div class="card-body" style="background-color: #1e1e1f;  height: 50px;">
+                    <p class="f1 title-game">{{juego.Nombre}}</p>
+                  </div>
+                  <div class="container"style="background-color: #1e1e1f;  height: 70px;">
+                  <p class="cortar" >{{juego.Descripcion}}</p>
+                </div>
+
+
+                <div class="card-body" style="background-color: #1e1e1f; height: 85px;">
+                    <div class="text-right">
+                        <small class="text-muted">{{juego.Fecha | date: 'yyyy-MM-dd'}}</small>
+                        <br>
+                        <div class="btn-group">
+                            <button [routerLink]="['/juego1/buscar',juego.idJuego]" type="button" class="btn btn-sm btn-primary" >Ver Juego</button>
+                            
+                          </div>
+                      </div>
+                    </div>
+                
+                
+
+                </div>
+                <br>
+                
+            </div>
+        </div>
+    </div>
+
+    
+
+
+             
+
+
+
+
+
+
+
+
+  
+
+
+
+        
+  
+    </main>
+  
+    <footer class="text-muted py-5">
+      <div class="container">
+        <p class="mb-1 f2" style="font-size: 18px;"><b>NEVER SAY GAME OVER!</b></p>
+  
+      </div>
+    </footer>
+  

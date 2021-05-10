@@ -28,7 +28,7 @@ function validarCredenciales(req, res) {
             const consulta = yield conn.query('SELECT * FROM usuario WHERE username= ?', [datos.usuario]);
             try {
                 if (consulta[0].Contrasenia == datos.contrasenia) {
-                    const consulta2 = yield conn.query('INSERT into sesion (idUsuario, Username, Tipo) VALUES (?,?,?)', [consulta[0].idUsuario, consulta[0].Username, consulta[0].tipo]);
+                    const consulta2 = yield conn.query('INSERT into sesion (idUsuario, Username, Tipo) VALUES (?,?,?)', [consulta[0].idUsuario, consulta[0].Username, consulta[0].Tipo]);
                     res.json({ acceso: true, mensaje: "Bienvenido" });
                 }
                 else {

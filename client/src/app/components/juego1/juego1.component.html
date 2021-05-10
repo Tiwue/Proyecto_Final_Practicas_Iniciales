@@ -1,0 +1,138 @@
+<style>
+    body {
+      background-image: url(https://img4.goodfon.com/wallpaper/nbig/2/ce/igra-mega-man-x-mega-man-retro-igra-retro-pikseli-pxl-nebo-n.jpg);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-color: #050505;
+      color: white
+    }
+    
+    .cortar{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        overflow: hidden;
+    }
+  
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+      
+  
+  
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  
+  </style>
+  
+  <body>
+  
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-success bg-dark">
+        <b class="navbar-brand text-success f2" href="#">Retro-Hub</b>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link f3" style="font-size: 18px;" routerLink="/registro" href="#">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link f3" style="font-size: 18px;" routerLink="/logout">Cerrar Sesión</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </header>
+  
+    <main>
+  
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light f1">{{vjuegos2.Nombre}}  </h1>  
+            <div class="btn-group">
+                <button routerLink="/juegos" type="button" class="btn btn-sm btn-primary" >Volver a Juegos</button>
+              </div>
+          </div>
+          
+        </div>
+        
+     
+ 
+                    <div class="card shadow-sm ">
+                    <div class="card text-center">
+                        
+                        <div class="card-dody">
+                      <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Descripcion</th>
+                           
+                          
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><img width="600px" height="600px"
+                                src={{vjuegos2.Cartucho}} ></td>
+    
+                            <td>{{vjuegos2.Descripcion}}
+                                <br>
+                                <br>
+                                <div class="text-right">
+                                    <p class="text-right">{{vjuegos2.Fecha }}</p>
+                                    <br>
+                                    </div> 
+                            
+                            </td>
+                           
+                          </tr>
+                         
+                          
+                        </tbody>
+                      </table>
+                        </div>
+                    </div>
+
+    
+                </div>    
+                
+                 </section>
+
+
+
+         
+      
+
+        
+  
+
+                 
+
+               
+
+  
+
+
+
+        
+  
+    </main>
+  
+    <footer class="text-muted py-5">
+      <div class="container">
+        <p class="mb-1 f2" style="font-size: 18px;"><b>NEVER SAY GAME OVER!</b></p>
+  
+      </div>
+    </footer>
+  

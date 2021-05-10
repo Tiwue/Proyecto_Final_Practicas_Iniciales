@@ -8,16 +8,13 @@ const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const loginRoutes_1 = __importDefault(require("./routes/loginRoutes"));
+const juegosRoutes_1 = __importDefault(require("./routes/juegosRoutes"));
 const publicacionesRoutes_1 = __importDefault(require("./routes/publicacionesRoutes"));
 const cambio_1 = __importDefault(require("./routes/cambio"));
 const forgPass_1 = __importDefault(require("./routes/forgPass"));
 const registroRoutes_1 = __importDefault(require("./routes/registroRoutes"));
 const logoutRoutes_1 = __importDefault(require("./routes/logoutRoutes"));
 const getSesionRoute_1 = __importDefault(require("./routes/getSesionRoute"));
-const getUsuariosRoute_1 = __importDefault(require("./routes/getUsuariosRoute"));
-const getGamesRoutes_1 = __importDefault(require("./routes/getGamesRoutes"));
-const gamesRoutes_1 = __importDefault(require("./routes/gamesRoutes"));
-const newPostRoutes_1 = __importDefault(require("./routes/newPostRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -40,10 +37,7 @@ class Server {
         this.app.use('/posts', publicacionesRoutes_1.default);
         this.app.use('/logout', logoutRoutes_1.default);
         this.app.use('/getSesion', getSesionRoute_1.default);
-        this.app.use('/getUsers', getUsuariosRoute_1.default);
-        this.app.use('/games', gamesRoutes_1.default);
-        this.app.use('/getGames', getGamesRoutes_1.default);
-        this.app.use('/createNewPost', newPostRoutes_1.default);
+        this.app.use('/juegos', juegosRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {
