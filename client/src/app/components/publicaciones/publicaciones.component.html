@@ -32,17 +32,17 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link f3" style="font-size: 18px;" routerLink="/registro" href="#">Perfil</a>
+            <a class="navbar-brand  f3"  routerLink="/registro" href="#">Perfil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link f3" style="font-size: 18px;" routerLink="/logout">Cerrar Sesión</a>
+            <a class="navbar-brand  f3"  routerLink="/logout">Cerrar Sesión</a>
           </li>
           <li class="nav-item">
-          <a class="navbar-brand text-success f2" routerLink="/admon" *ngIf="sesion.Tipo==1">Administracion</a>
-        </li>
-        <li class="nav-item">
-          <a class="navbar-brand text-success f2" routerLink="/juegos">Juegos</a>
-        </li>
+            <a class="navbar-brand  f3" routerLink="/admon" *ngIf="sesion.Tipo==1">Administracion</a>
+          </li>
+          <li class="nav-item">
+            <a class="navbar-brand  f3" routerLink="/juegos">Juegos</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -59,29 +59,29 @@
     </section>
     <div class="album py-5" style="background-color: #303030">
 
-        <section class="text-center container">
-            <div class="row py-lg-5">
-              <div class="col-lg-4 col-md-8 mx-auto">
-                <form class="form-block">
-                    <input class="form-control mr-sm-2 text-center" type="text" placeholder="Buscar">
-                    <br>
-                    <button class="btn btn-success my-2 my-sm-0" type="submit">- Buscar - </button>
-                  </form>
-                </div>
-            </div>
-          </section>
-          <div class="p-4 text-center">
-            <button class="btn btn-info my-2 my-sm-0 " routerLink="/newPost"><h3>Crear Publicacion</h3> </button>
+      <section class="text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-4 col-md-8 mx-auto">
+            <form class="form-block">
+              <input class="form-control mr-sm-2 text-center" type="text" placeholder="Buscar">
+              <br>
+              <button class="btn btn-success my-2 my-sm-0" type="submit">- Buscar - </button>
+            </form>
           </div>
+        </div>
+      </section>
+      <div class="p-4 text-center">
+        <button class="btn btn-info my-2 my-sm-0 " routerLink="/newPost">
+          <h4 class="f4">Crear Publicación</h4>
+        </button>
+      </div>
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
           <div class="col" *ngFor="let post of posts">
             <div class="card shadow-sm">
               <a routerLink="/registro">
-                <img width="100%" height="525px"
-                  src={{post.Cartucho}}
-                  alt="">
+                <img width="100%" height="525px" src={{post.Cartucho}} alt="">
               </a>
               <div class="card-body" style="background-color: #1e1e1f; height: 210px;">
                 <p class="f1 title-game">{{post.nombreJuego}}</p>
@@ -92,13 +92,14 @@
               </div>
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-primary">Ver</button>
-               
+
                 <button type="button" class="btn btn-sm btn-light" *ngIf="sesion.Tipo==1">Editar</button>
               </div>
               <div class="card-footer text-muted text-center">
                 By: {{post.Usuario}}
               </div>
             </div>
+            <br><br>
           </div>
 
         </div>
