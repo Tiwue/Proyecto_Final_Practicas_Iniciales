@@ -46,7 +46,7 @@ class Server{
         this.app.use('/games',gamesRoutes);
         this.app.use('/getGames', getGames);
         this.app.use('/createNewPost', createNewPost);
-        this.app.use('/users', usersRoutes)
+        this.app.use('/users', usersRoutes);
 
     }
 

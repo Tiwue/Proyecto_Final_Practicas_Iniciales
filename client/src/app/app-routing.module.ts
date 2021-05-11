@@ -65,7 +65,7 @@ const routes: Routes = [{
   path: 'user/edit/:id',
   component: UserFormComponent
 },{
-  path: 'view-post',
+  path: 'posts/:id',
   component: ViewPostComponent
 }
 

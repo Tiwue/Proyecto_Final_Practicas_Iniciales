@@ -9,12 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getPublicacion = exports.getPosts = void 0;
+exports.getOne = exports.getPublicacion = exports.getPosts = void 0;
 const database_1 = require("../database");
 function getPosts(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const conn = yield database_1.connect();
-        const posts = yield conn.query('SELECT publicacion.Fecha, publicacion.Comentario, juego.Nombre AS nombreJuego, usuario.Nombre AS Usuario, juego.Cartucho FROM publicacion INNER JOIN juego ON publicacion.Juego_idJuego=juego.idJuego INNER JOIN usuario ON publicacion.Usuario_idUsuario=usuario.idUsuario');
+        const posts = yield conn.query('SELECT publicacion.idPublicacion, publicacion.Fecha, publicacion.Comentario, juego.Nombre AS nombreJuego, usuario.Nombre AS Usuario, juego.Cartucho FROM publicacion INNER JOIN juego ON publicacion.Juego_idJuego=juego.idJuego INNER JOIN usuario ON publicacion.Usuario_idUsuario=usuario.idUsuario');
         return res.json(posts);
     });
 }
@@ -30,4 +30,18 @@ function getPublicacion(req, res) {
     });
 }
 exports.getPublicacion = getPublicacion;
+;
+function getOne(req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const conn = yield database_1.connect();
+        const { id } = req.params;
+        const games = yield conn.query('SELECT publicacion.idPublicacion, publicacion.Fecha, publicacion.Comentario, juego.Nombre AS nombreJuego, usuario.Nombre AS Usuario, juego.Cartucho FROM publicacion INNER JOIN juego ON publicacion.Juego_idJuego=juego.idJuego INNER JOIN usuario ON publicacion.Usuario_idUsuario=usuario.idUsuario WHERE publicacion.idPublicacion=?', [id]);
+        console.log(games[0]);
+        if (games.length > 0) {
+            return res.json(games[0]);
+        }
+        res.status(404).json({ text: "The game doesn't exits" });
+    });
+}
+exports.getOne = getOne;
 ;

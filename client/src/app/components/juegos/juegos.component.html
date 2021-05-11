@@ -77,11 +77,11 @@
                  <br>
                   <div class="col" *ngFor="let juego of vjuegos">
                     <div class="card shadow-sm">
-                     
+                     <a [routerLink]="['/juego1/buscar',juego.idJuego]">
                         <img width="100%" height="525px"
-                          src={{juego.Cartucho}}
+                          src={{juego.cartucho}}
                           alt="">
-                     
+                        </a>
                       <div class="card-body" style="background-color: #1e1e1f;  height: 50px;">
                         <p class="f1 title-game">{{juego.Nombre}}</p>
                       </div>

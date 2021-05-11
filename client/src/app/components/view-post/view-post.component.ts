@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ViewPostService  } from '../../services/view-post.service';
+import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-view-post',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewPostComponent implements OnInit {
 
-  constructor() { }
+  post: any = {
+    idPublicacion: 0,
+    Fecha: '',
+    Comentario: '',
+    nombreJuego: '',
+    Usuario: '',
+    Cartucho: ''
+  }
+
+
+  constructor(private viewPostService : ViewPostService, private router: Router, private activatedRoute : ActivatedRoute) { }
 
   ngOnInit(): void {
+    const params=this.activatedRoute.snapshot.params;
+    this.viewPostService.getPost(params.id).subscribe(
+      res=> {this.post=res, console.log(res)}, 
+      error => console.log(error),
+      
+    );
   }
 
 }

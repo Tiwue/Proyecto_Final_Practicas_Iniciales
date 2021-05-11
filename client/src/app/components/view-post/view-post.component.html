@@ -1,1 +1,118 @@
-<p>view-post works!</p>
+<style>
+    body {
+      background-image: url(https://img4.goodfon.com/wallpaper/nbig/2/ce/igra-mega-man-x-mega-man-retro-igra-retro-pikseli-pxl-nebo-n.jpg);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-color: #050505;
+      color: white
+    }
+  
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+  
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  
+  </style>
+  
+  <body>
+  
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-success">
+        <b class="navbar-brand text-success f2" href="#">Retro-Hub</b>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="navbar-brand  f3" routerLink="/publicaciones" >Inicio</a>
+              </li>
+            <li class="nav-item active">
+              <a class="navbar-brand  f3"  routerLink="/registro" href="#">Perfil</a>
+            </li>
+            <li class="nav-item">
+                <a class="navbar-brand  f3" routerLink="/juegos">Juegos</a>
+            </li>
+            <li class="nav-item">
+              <a class="navbar-brand  f3"  routerLink="/logout">Cerrar Sesión</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  
+    <main>
+
+      <div class="album py-5" style="background-color: #303030">
+  
+        <div class="container">
+          <div class="row row-cols-1 justify-content-center">
+  
+            <div class="col-md-7">
+              <div class="card shadow-sm">
+                  <img width="100%" height="525px" src={{post.Cartucho}} alt="">
+                <div class="card-body" style="background-color: #1e1e1f; height: 210px;">
+                  <p class="f1 title-game">{{post.nombreJuego}}</p>
+                  <p class="card-text f4 description-game">{{post.Comentario}}</p>
+                  <div class="text-right">
+                    <small class="text-muted">{{post.Fecha | date: 'yyyy-MM-dd'}}</small>
+                  </div>
+                </div>
+                <div class="card-footer text-muted text-center">
+                  By: {{post.Usuario}}
+                </div>
+              </div>
+              <br><br>
+            </div>
+
+            
+        </div> 
+    </div>
+    
+
+        <div class="container">
+            <div class="mx-auto" >
+                <h1 class="fw-light f4">Comentarios</h1>
+            </div>
+            <br>
+          <div class="list-group">
+              <div class="list-group-item list-group-item-action flex-column align-items-start"  style="background-color: #1e1e1f;">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class=" text-primary">List group item heading</h5>
+                  <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="container">
+            <div class="card shadow-sm">
+                <div class="mx-auto" >
+                    <h1 class="fw-light f4">Nuevo Comentario</h1>
+                </div>
+                <br>
+            <textarea class="form-control" id="exampleTextarea" placeholder="Escribe un comentario" maxlength="100" rows="4"></textarea>
+            <br>
+            <button class="btn btn-primary" type="submit"> Comentar </button>
+            </div>
+            <br><br>
+          </div>
+
+      </div>
+  
+    </main>
+  
+    <footer class="text-muted py-5">
+      <div class="container">
+        <p class="mb-1 f2" style="font-size: 18px;"><b>NEVER SAY GAME OVER!</b></p>
+  
+      </div>
+    </footer>

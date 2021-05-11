@@ -7,4 +7,6 @@ router.route('/')
     .get(publicacionesController_1.getPosts);
 router.route('/')
     .post(publicacionesController_1.getPublicacion);
+router.route('/:id')
+    .get(publicacionesController_1.getOne);
 exports.default = router;
