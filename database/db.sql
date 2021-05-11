@@ -46,7 +46,6 @@ CREATE TABLE `juego` (
   `Cartucho` varchar(500) NOT NULL,
   `Fecha` date NOT NULL,
   `Consola_idConsola` int(11) NOT NULL,
-  `Imagen` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -211,7 +210,6 @@ INSERT INTO `consola` (`idConsola`, `Nombre`) VALUES (2, 'NES');
 INSERT INTO `juego` (`Nombre`,`Descripcion`,`Cartucho`,`Fecha`,`Consola_idConsola` ) VALUES 
 ('Super Mario Bros. 3','Mario y Luigi vuelven para enfrentarse a Bowser y sus adorables hijos', 'https://media.redadn.es/imagenes/super-mario-bros-3_121249_caratula-1.jpg' ,'1991/08/30',2 );
 
-
 INSERT INTO `juego` (`Nombre`,`Descripcion`,`Cartucho`,`Fecha`,`Consola_idConsola` ) VALUES 
 ('Super Mario Bros','Bowser, el rey de los Koopa y villano por excelencia, ha secuestrado a la princesa Peach del Reino Champiñón y la ha encerrado en su castillo. ¿Tienes lo que hay que tener para salvarla?', 'https://i.blogs.es/638318/super_mario_bros_logo/1366_2000.jpeg' ,'1987/05/15',2 );
 
@@ -278,11 +276,13 @@ INSERT INTO `juego` (`Nombre`,`Descripcion`,`Cartucho`,`Fecha`,`Consola_idConsol
 INSERT INTO `juego` (`Nombre`,`Descripcion`,`Cartucho`,`Fecha`,`Consola_idConsola` ) VALUES 
 ('Adventures of Lolo','El malvado Devil King amenaza con destruir Eden, así que la princesa Lala y el príncipe Lolo salen al rescate. Desgraciadamente, la princesa es raptada y Lolo tiene que seguir en solitario. Usa tu inteligencia para ayudarle a superar las trampas del castillo de Devil King y rescatar a Lala.', 'https://media.redadn.es/imagenes/adventures-of-lolo_146656_caratula-1.jpg' ,'1991/02/21',2 );  
 
-INSERT INTO `publicacion` (`idPublicacion`, `Fecha`, `Usuario_idUsuario`, `Juego_idJuego`, `Comentario`) VALUES (NULL, current_timestamp(), '1', '19', 'Juego favorito de nuestro querido auxiliar de practicas iniciales');
 
-INSERT INTO `usuario` (`idUsuario`, `Nombre`, `Username`, `Correo`, `Contrasenia`,`Biografia`,`Fecha`,`Tipo`) VALUES (NULL,'admin','admin', 'asfasdfsadf', 'admin','asdf','2020/05/10','1');
+INSERT INTO `usuario` (`Nombre`, `Username`, `Correo`, `Contrasenia`,`Biografia`,`Fecha`,`Tipo`) VALUES ('admin','admin', 'asfasdfsadf', 'admin','asdf','2020/05/10','1');
 
-INSERT INTO `usuario` (`idUsuario`, `Nombre`, `Username`, `Correo`, `Contrasenia`,`Biografia`,`Fecha`,`Tipo`) VALUES (NULL,'admin2','admin2', 'asfasdfsadf', 'admin2','asdf','2020/05/10','0');
+INSERT INTO `usuario` ( `Nombre`, `Username`, `Correo`, `Contrasenia`,`Biografia`,`Fecha`,`Tipo`) VALUES ('admin2','admin2', 'asfasdfsadf', 'admin2','asdf','2020/05/10','0');
+
+INSERT INTO `publicacion` ( `Fecha`, `Usuario_idUsuario`, `Juego_idJuego`, `Comentario`) VALUES ( current_timestamp(), '1', '19', 'Juego favorito de nuestro querido auxiliar de practicas iniciales');
+INSERT INTO `publicacion` ( `Fecha`, `Usuario_idUsuario`, `Juego_idJuego`, `Comentario`) VALUES (current_timestamp(), '2', '2', 'Mi juego favorito aunque no lo terminé :c');
 
 COMMIT;
 
