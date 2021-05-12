@@ -23,6 +23,8 @@ import { CreatePostComponent } from './components/create-post/create-post.compon
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { GameFormComponent } from './components/game-form/game-form.component';
 import { ViewPostComponent } from './components/view-post/view-post.component';
+import {PerfilComponent}from './components/perfil/perfil.component';
+import {PerfilService}from './services/perfil.service'
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { ViewPostComponent } from './components/view-post/view-post.component';
     UserFormComponent,
     GameFormComponent,
     ViewPostComponent
+    GameFormComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +54,7 @@ import { ViewPostComponent } from './components/view-post/view-post.component';
     FormsModule
   ],
   providers: [LoginService, PublicacionesService ,JuegosService],
+  providers: [LoginService, PublicacionesService,PerfilService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

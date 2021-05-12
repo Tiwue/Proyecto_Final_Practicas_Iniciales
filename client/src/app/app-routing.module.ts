@@ -14,7 +14,7 @@ import { CreatePostComponent } from './components/create-post/create-post.compon
 import { GameFormComponent } from './components/game-form/game-form.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { ViewPostComponent } from './components/view-post/view-post.component';
-
+import {PerfilComponent}from './components/perfil/perfil.component'
 const routes: Routes = [{
   path:'',
   redirectTo: '/index',
@@ -67,6 +67,10 @@ const routes: Routes = [{
 },{
   path: 'posts/:id',
   component: ViewPostComponent
+},
+{
+  path: 'perfil/:id',
+  component: PerfilComponent
 }
 
 ];
