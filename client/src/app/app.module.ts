@@ -20,6 +20,9 @@ import { CreatePostComponent } from './components/create-post/create-post.compon
 
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { GameFormComponent } from './components/game-form/game-form.component';
+import {PerfilComponent}from './components/perfil/perfil.component';
+import {PerfilService}from './services/perfil.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,8 @@ import { GameFormComponent } from './components/game-form/game-form.component';
     AdmonComponent,
     CreatePostComponent,
     UserFormComponent,
-    GameFormComponent
+    GameFormComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,7 @@ import { GameFormComponent } from './components/game-form/game-form.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [LoginService, PublicacionesService ],
+  providers: [LoginService, PublicacionesService,PerfilService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

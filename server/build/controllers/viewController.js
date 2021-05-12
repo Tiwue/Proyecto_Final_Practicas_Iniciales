@@ -9,17 +9,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.connect = void 0;
-const promise_mysql_1 = require("promise-mysql");
-function connect() {
+exports.getOne = void 0;
+const database_1 = require("../database");
+function getOne(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        const connection = yield promise_mysql_1.createPool({
-            host: 'localhost',
-            user: 'root',
-            password: '',
-            database: 'db'
-        });
-        return connection;
+        const conn = yield database_1.connect();
+        const { id } = req.params;
+        const perfil = yield conn.query('SELECT * FROM usuario WHERE idUsuario = ?', [id]);
+        if (perfil.length > 0) {
+            return res.json(perfil[0]);
+        }
+        res.status(404).json({ text: "The profile doesn't exits" });
     });
 }
-exports.connect = connect;
+exports.getOne = getOne;
+;

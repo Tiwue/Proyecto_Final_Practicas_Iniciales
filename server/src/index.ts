@@ -13,6 +13,7 @@ import getUsers from './routes/getUsuariosRoute'
 import getGames from './routes/getGamesRoutes'
 import gamesRoutes from './routes/gamesRoutes'
 import createNewPost from './routes/newPostRoutes'
+import viewPerfil from './routes/viewPerfilRoutes'
 
 class Server{
     public app: Application ; 
@@ -42,8 +43,8 @@ class Server{
         this.app.use('/getUsers', getUsers);
         this.app.use('/games',gamesRoutes);
         this.app.use('/getGames', getGames);
-        this.app.use('/createNewPost', createNewPost)
-
+        this.app.use('/createNewPost', createNewPost);
+        this.app.use('/perfil',viewPerfil);
     }
 
     start():void{

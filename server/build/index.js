@@ -18,6 +18,7 @@ const getUsuariosRoute_1 = __importDefault(require("./routes/getUsuariosRoute"))
 const getGamesRoutes_1 = __importDefault(require("./routes/getGamesRoutes"));
 const gamesRoutes_1 = __importDefault(require("./routes/gamesRoutes"));
 const newPostRoutes_1 = __importDefault(require("./routes/newPostRoutes"));
+const viewPerfilRoutes_1 = __importDefault(require("./routes/viewPerfilRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -44,6 +45,7 @@ class Server {
         this.app.use('/games', gamesRoutes_1.default);
         this.app.use('/getGames', getGamesRoutes_1.default);
         this.app.use('/createNewPost', newPostRoutes_1.default);
+        this.app.use('/perfil', viewPerfilRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {
