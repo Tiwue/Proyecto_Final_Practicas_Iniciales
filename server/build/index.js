@@ -49,6 +49,7 @@ class Server {
         this.app.use('/getGames', getGamesRoutes_1.default);
         this.app.use('/createNewPost', newPostRoutes_1.default);
         this.app.use('/users', usersRoutes_1.default);
+        this.app.use('/createNewPost', newPostRoutes_1.default);
         this.app.use('/perfil', viewPerfilRoutes_1.default);
     }
     start() {

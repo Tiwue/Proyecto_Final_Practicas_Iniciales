@@ -21,4 +21,7 @@ deleteGame(id: string) {
   return this.http.delete(`${this.API_URI}/games/${id}`);
 }
  
+deleteUser(id: string) {
+  return this.http.delete(`${this.API_URI}/users/${id}`);
+}
 }

@@ -16,7 +16,7 @@ function connect() {
         const connection = yield promise_mysql_1.createPool({
             host: 'localhost',
             user: 'root',
-            password: '',
+            password: '1234',
             database: 'db'
         });
         return connection;

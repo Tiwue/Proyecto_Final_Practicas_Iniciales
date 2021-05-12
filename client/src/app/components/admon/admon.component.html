@@ -62,7 +62,10 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link f3" style="font-size: 18px;" routerLink="/registro" href="#"><i class="far fa-user"></i>  Perfil</a>
+                <a class="nav-link f3" style="font-size: 18px;" routerLink="/publicaciones"href="#">Publicaciones</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link f3" style="font-size: 18px;" routerLink="/juegos"href="#">Juegos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link f3" style="font-size: 18px;" routerLink="/logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
@@ -114,7 +117,7 @@
             <th scope="col" *ngIf="user.tipo==1">Administrador</th>
             <th scope="col" *ngIf="user.tipo==0">Cliente</th>
             <th><button class="btn btn-outline-warning" [routerLink]="['/user/edit', user.idUsuario]"><i class="fas fa-pencil-alt"></i></button></th>
-            <th><button  class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
+            <th><button  class="btn btn-outline-danger" (click)="deleteUser(user.idUsuario)"><i class="fas fa-trash-alt"></i></button>
           </tr>
         </thead>
         </table>
@@ -133,7 +136,7 @@
             <th scope="col">Consola</th>
           </tr>
           <tr class="table-dark text-white" *ngFor="let game of games">
-            <th scope="col"><img src='{{game.Cartucho}}' alt="cartucho" width="50" height="60"></th>
+            <th scope="col"><img src='{{game.cartucho}}' alt="cartucho" width="50" height="60"></th>
             <th scope="col">{{game.idJuego}}</th>
             <th scope="col">{{game.Nombre}}</th>
             <th scope="col">{{game.descripcion}}</th>

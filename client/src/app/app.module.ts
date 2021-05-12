@@ -43,7 +43,7 @@ import {PerfilService}from './services/perfil.service'
     CreatePostComponent,
     UserFormComponent,
     GameFormComponent,
-    ViewPostComponent
+    ViewPostComponent,
     GameFormComponent,
     PerfilComponent
   ],
@@ -54,7 +54,6 @@ import {PerfilService}from './services/perfil.service'
     FormsModule
   ],
   providers: [LoginService, PublicacionesService ,JuegosService],
-  providers: [LoginService, PublicacionesService,PerfilService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

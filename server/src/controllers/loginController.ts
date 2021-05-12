@@ -19,7 +19,7 @@ export async function validarCredenciales(req: Request,res:Response):Promise<any
     try{
         
     if (consulta[0].Contrasenia == datos.contrasenia){
-        const consulta2= await conn.query('INSERT into sesion (idUsuario, Username, Tipo) VALUES (?,?,?)',[consulta[0].idUsuario, consulta[0].Username, consulta[0].Tipo]);
+        const consulta2= await conn.query('INSERT into sesion (idUsuario, Username, Tipo) VALUES (?,?,?)',[consulta[0].idUsuario, consulta[0].Username, consulta[0].tipo]);
         res.json({acceso: true, mensaje: "Bienvenido"})
 
     }else{
